@@ -1,0 +1,36 @@
+//colors
+$blue: #699be7;
+$green: #11cf80;
+$green-dark: #00d97e;
+$pink: #db00ff;
+$pink-light: #fbe1ff;
+$red: #ff4d00;
+$red-light: #ff8e8e;
+$orange: #e46353;
+$yellow-dark: #bb9f39;
+$yellow: #fbd244;
+$yellow-light: #f2f3e5;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+.app-root {
+  background: $yellow-light;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  background: $yellow;
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  text-align: center;
+}

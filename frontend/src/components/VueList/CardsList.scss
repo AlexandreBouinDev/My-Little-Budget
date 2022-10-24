@@ -1,0 +1,7 @@
+@use "../../styles/Global.scss" as g;
+
+.cardsList-root {
+  padding: 0 20px;
+  flex: 1;
+  overflow-y: auto;
+}

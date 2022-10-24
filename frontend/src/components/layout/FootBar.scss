@@ -1,0 +1,32 @@
+@use "../../styles/Global.scss" as g;
+
+.footbar-root {
+  display: flex;
+  position: relative;
+  z-index: 100;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+
+  .footbar-button {
+    display: flex;
+    justify-content: center;
+    background: g.$yellow;
+    padding: 16px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    border: 1px solid g.$yellow-dark;
+
+    &:hover {
+      cursor: pointer;
+      background: g.$orange;
+    }
+
+    &.add {
+      flex: 1;
+    }
+  }
+}

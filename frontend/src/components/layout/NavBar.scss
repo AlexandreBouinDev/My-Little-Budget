@@ -1,0 +1,21 @@
+@use "../../styles/Global.scss" as g;
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    background: g.$yellow;
+    border: 1px solid g.$yellow-dark;
+    padding: 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      background: g.$orange;
+    }
+  }
+}

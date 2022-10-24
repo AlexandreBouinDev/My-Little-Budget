@@ -1,0 +1,89 @@
+@use "../../styles/Global.scss" as g;
+
+.card-root {
+  display: flex;
+  margin: 20px 0 20px 40px;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.card-element {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(black, 0.25);
+  overflow: hidden;
+  flex: 1;
+  max-width: 400px;
+
+  .card-edge {
+    width: 8px;
+
+    &.expense {
+      background: g.$red;
+    }
+    &.income {
+      background: g.$green;
+    }
+    &.adjust {
+      background: g.$pink;
+    }
+  }
+
+  .card-content {
+    padding: 8px;
+    width: 100%;
+
+    .card-firstline {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+
+      .card-amount {
+        font-size: 16px;
+        &.expense {
+          color: g.$red;
+        }
+        &.income {
+          color: g.$green;
+        }
+        &.adjust {
+          color: g.$pink;
+        }
+      }
+    }
+  }
+}
+
+.card-actions {
+  position: relative;
+  color: g.$red;
+  max-height: 40px;
+  margin: auto 0;
+  padding: 10px;
+  left: -44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: rgba(grey, 0.1);
+  transition: 0.3s;
+  box-shadow: 0 4px 4px rgba(black, 0.18);
+
+  &:hover {
+    background: g.$red;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.card-root:hover {
+  .card-actions {
+    left: -4px;
+    transition: 0.3s;
+  }
+}
