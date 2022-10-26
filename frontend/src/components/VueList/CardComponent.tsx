@@ -6,20 +6,14 @@ import { CardModel } from "../../models";
 import { apiDeleteCard, apiGetCards } from "../../front-api";
 import { useDispatch } from "react-redux";
 import { setCardsState } from "../../stores";
+import { FormatDate } from "../../utils";
 
 interface ICardComponentProps {
   card: CardModel;
-  key: string;
 }
 
-export function CardComponent({ card, key }: ICardComponentProps) {
+export function CardComponent({ card }: ICardComponentProps) {
   const dispatch = useDispatch();
-
-  function formatDate(date: Date) {
-    let UTCDate = new Date(date);
-    let formattedDate = UTCDate.toLocaleDateString().slice(0, -5);
-    return formattedDate;
-  }
 
   function reloadCardsList() {
     apiGetCards().then((data) => {
@@ -32,7 +26,7 @@ export function CardComponent({ card, key }: ICardComponentProps) {
   }
 
   return (
-    <div className="card-root" key={key}>
+    <div className="card-root" key={card._id as string}>
       <div className="card-element">
         <div className={clsx("card-edge", card.type)}></div>
         <div className="card-content">
@@ -42,7 +36,7 @@ export function CardComponent({ card, key }: ICardComponentProps) {
               {`${card.type === "expense" ? "-" : ""} ${card.amount} €`}
             </p>
           </div>
-          <p>{formatDate(card.date)}</p>
+          <p>{FormatDate(card.date)}</p>
         </div>
       </div>
       <div className="card-actions">

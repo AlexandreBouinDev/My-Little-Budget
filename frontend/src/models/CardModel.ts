@@ -1,8 +1,8 @@
 export interface CardModel {
-  _id: String;
-  name: String;
+  _id: string;
+  name: string;
   type: "expense" | "income";
-  amount: Number;
+  amount: number;
   date: Date;
-  ignored: Boolean;
+  ignored: boolean;
 }
